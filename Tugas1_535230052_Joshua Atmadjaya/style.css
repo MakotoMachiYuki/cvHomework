@@ -1,108 +1,292 @@
-* 
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body
-{
-    font-family: sans-serif;    
-    font-size: 1.641rem;
+:root {
+  --bbPurple: #f3c7fa;
+  --xufuBGBlue: #07f9ff;
 }
 
-@font-face 
-{
-    font-family: NgutangDong;
-    src: url(fonts/ngutangdong.ttf);
+@font-face {
+  font-family: NgutangDong;
+  src: url(fonts/ngutangdong.ttf);
+}
+@font-face {
+  font-family: yurukaUB;
+  src: url(fonts/yurukaUB.ttf);
 }
 
-#backgroundContainer
-{
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 100vh;
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.641rem;
 }
 
-#background
-{   
-    display: block;
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    -webkit-filter:  blur(2px) grayscale(10%);
-    filter:  blur(2px) grayscale(10%);  
+a {
+  color: #ec9eed;
+}
+a:hover {
+  color: #eeeeee;
+}
+#backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-
-@media screen and (max-aspect-ratio: 1920/1080) 
-{
-    #background {
-        height: 100%;
-        width: auto;
-    }
-}    
-
-#content
-{
-    position: relative;
-    margin: auto;
-    max-width: 640px;
-    padding: 8px;
-    color: white;
-    background-color: rgba(5,98,167,0.75);
-    z-index: 2;
-  
+#background {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  -webkit-filter: blur(2px) grayscale(10%);
+  filter: blur(2px) grayscale(10%);
 }
 
-.container1
-{
-    display: flex;
-    justify-content: center;
+#backgroundNoBlur {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
-.profileContainer
-{
-    padding: 20px;
+#content {
+  position: relative;
+  margin: auto;
+  max-width: 640px;
+  padding: 8px;
+  color: white;
+  background-color: rgba(5, 98, 167, 0.75);
+  z-index: 1;
 }
 
-#profile
-{
-    padding: 5px;
-    text-align: center;
+.container1 {
+  display: flex;
+  justify-content: center;
 }
 
-.name1
-{
-    font-weight: bold;
+.profileContainer {
+  padding-top: 10px;
 }
-.name2
-{
+
+.profile {
+  padding: 5px;
+  text-align: center;
+}
+
+#name1 {
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: yurukaUB;
+  padding-bottom: 0px;
+  color: var(--bbPurple);
+}
+#name2 {
+  font-size: 2.5rem;
+  padding-top: 0px;
+  font-family: yurukaUB;
+  color: var(--xufuBGBlue);
+}
+
+#profilePicture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+#profilePictureContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+}
+
+.icons:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.fa-brands {
+  color: white;
+}
+
+#github:hover {
+  color: black;
+}
+
+#youtube:hover {
+  color: red;
+}
+
+#twitter:hover {
+  color: #1da1f2;
+}
+
+#instagram:hover {
+  background-image: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+  color: transparent;
+  background-clip: text;
+}
+.text {
+  font-size: 2rem;
+  font-family: NgutangDong;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+
+#programmerlogo {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.logoGroupDiv {
+  display: flex;
+  gap: 30px;
+  width: 350px;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--bbPurple) transparent;
+
+  --sb-size: 5px;
+}
+
+.logoGroupDiv .logoGroup {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 150px;
+}
+
+.description {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+#aboutUsername {
+  display: flex;
+  gap: 8px;
+}
+
+.username {
+  color: var(--bbPurple);
+}
+
+#sources {
+  display: none;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.8s ease-in-out;
+}
+
+#assets2 {
+  display: none;
+}
+
+#caret1:hover,
+#caret2:hover {
+  color: var(--bbPurple);
+}
+
+#contact,
+#placeholder {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#discord {
+  color: #72bdff;
+}
+#mail {
+  color: rgb(255, 106, 106);
+}
+
+#contact {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+#showBackground {
+  display: none;
+}
+
+@media (max-aspect-ratio: 1524/915) {
+  #background {
+    height: 100%;
+    width: auto;
+    position: inherit;
+  }
+
+  body {
     font-size: 1rem;
-}
+    padding-right: 0px;
+  }
 
-.profilePicture
-{
-    width: 200px;
-    height:200px;
-    object-fit: cover;
-    border-radius: 100px;
-}
+  #name1 {
+    font-size: 1.95rem;
+  }
 
-.profilePictureContainer
-{   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  #name2 {
+    font-size: 1.5rem;
+  }
 
-.text
-{
-    font-family: NgutangDong;
-}
+  .icons {
+    font-size: 3rem;
+  }
 
+  .text {
+    font-size: 1.6rem;
+  }
+
+  .logoGroupDiv {
+    width: 250px;
+  }
+
+  #github {
+    color: black;
+  }
+
+  #youtube {
+    color: red;
+  }
+
+  #twitter {
+    color: #1da1f2;
+  }
+
+  #instagram {
+    background-image: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    color: transparent;
+    background-clip: text;
+  }
+
+  #showBackground {
+    display: block;
+    text-align: end;
+  }
+}
