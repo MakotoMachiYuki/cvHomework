@@ -23,11 +23,26 @@ body {
   font-size: 1.641rem;
 }
 
+li {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  list-style-position: inside;
+}
+
+li::marker {
+  color: var(--bbPurple);
+}
+
 a {
   color: #ec9eed;
 }
 a:hover {
   color: #eeeeee;
+}
+
+b {
+  color: var(--xufuBGBlue);
 }
 #backgroundContainer {
   position: fixed;
@@ -45,8 +60,8 @@ a:hover {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  -webkit-filter: blur(2px) grayscale(10%);
-  filter: blur(2px) grayscale(10%);
+  -webkit-filter: blur(3x) grayscale(15%) brightness(93%);
+  filter: blur(3px) grayscale(15%) brightness(93%);
 }
 
 #backgroundNoBlur {
@@ -62,8 +77,12 @@ a:hover {
 #content {
   position: relative;
   margin: auto;
-  max-width: 640px;
-  padding: 8px;
+  max-width: 800px;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
   color: white;
   background-color: rgba(5, 98, 167, 0.75);
   z-index: 1;
@@ -72,10 +91,7 @@ a:hover {
 .container1 {
   display: flex;
   justify-content: center;
-}
-
-.profileContainer {
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 .profile {
@@ -153,17 +169,24 @@ a:hover {
   padding-top: 10px;
 }
 
+#ide {
+  font-size: 1.7rem;
+}
+
 #programmerlogo {
   height: auto;
   width: auto;
   max-width: 300px;
   max-height: 300px;
+  margin: auto;
+  display: block;
 }
 
 .logoGroupDiv {
   display: flex;
+  border-radius: 100px;
   gap: 30px;
-  width: 350px;
+  width: 400px;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 30px;
@@ -171,8 +194,10 @@ a:hover {
   overflow-x: scroll;
   overscroll-behavior: contain;
   scrollbar-color: var(--bbPurple) transparent;
+}
 
-  --sb-size: 5px;
+#logoGroupDiv4 {
+  border-radius: 15px 50px 30px;
 }
 
 .logoGroupDiv .logoGroup {
@@ -184,7 +209,7 @@ a:hover {
 
 .description {
   padding-top: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 #aboutUsername {
@@ -231,11 +256,24 @@ a:hover {
   padding-bottom: 20px;
 }
 
+#umbrella {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#sources .description {
+  padding-bottom: 5px;
+}
+
 #showBackground {
   display: none;
 }
 
-@media (max-aspect-ratio: 1524/915) {
+.paddingDiv {
+  padding: 10px;
+}
+
+@media screen and (max-aspect-ratio: 1524/915) {
   #background {
     height: 100%;
     width: auto;
@@ -252,7 +290,7 @@ a:hover {
   }
 
   #name2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .icons {
@@ -261,6 +299,10 @@ a:hover {
 
   .text {
     font-size: 1.6rem;
+  }
+
+  #ide {
+    font-size: 1.3rem;
   }
 
   .logoGroupDiv {
@@ -283,6 +325,16 @@ a:hover {
     background-image: linear-gradient(#833ab4, #fd1d1d, #fcb045);
     color: transparent;
     background-clip: text;
+  }
+
+  #placeholder {
+    padding-bottom: 30px;
+  }
+
+  #content {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
   }
 
   #showBackground {

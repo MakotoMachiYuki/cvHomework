@@ -1,6 +1,12 @@
 const logoGroupDiv1 = document.getElementById("logoGroupDiv1");
 const logoGroupDiv2 = document.getElementById("logoGroupDiv2");
 const logoGroupDiv3 = document.getElementById("logoGroupDiv3");
+const logoGroupDiv4 = document.getElementById("logoGroupDiv4");
+const assets1 = document.getElementById("assets1");
+const assets2 = document.getElementById("assets2");
+const background = document.getElementById("background");
+const backgroundNoBlur = document.getElementById("backgroundNoBlur");
+const showBackground = document.getElementById("showBackground");
 
 //fungsi untuk bisa menggunakan scroll wheel dalam container logoGroupDiv
 const scrollFunction = function (e) {
@@ -13,12 +19,6 @@ const scrollFunction = function (e) {
     e.preventDefault();
   }
 };
-logoGroupDiv1.addEventListener("wheel", scrollFunction, false);
-logoGroupDiv2.addEventListener("wheel", scrollFunction, false);
-logoGroupDiv3.addEventListener("wheel", scrollFunction, false);
-
-const assets1 = document.getElementById("assets1");
-const assets2 = document.getElementById("assets2");
 
 const openFunction = function () {
   var sources = document.getElementById("sources");
@@ -61,17 +61,6 @@ const caretColorOut = function () {
   caret2.style.color = "#eeeeee";
 };
 
-assets1.addEventListener("click", openFunction, false);
-assets2.addEventListener("click", openFunction, false);
-assets1.addEventListener("mouseover", caretColorOver, false);
-assets2.addEventListener("mouseover", caretColorOver, false);
-assets1.addEventListener("mouseout", caretColorOut, false);
-assets2.addEventListener("mouseout", caretColorOut, false);
-
-const background = document.getElementById("background");
-const backgroundNoBlur = document.getElementById("backgroundNoBlur");
-const showBackground = document.getElementById("showBackground");
-
 const downBackground = function () {
   var background = document.getElementById("background");
   var content = document.getElementById("content");
@@ -88,6 +77,21 @@ const upBackground = function () {
   background.style.zIndex = "2";
 };
 
+//scroll listener
+logoGroupDiv1.addEventListener("wheel", scrollFunction, false);
+logoGroupDiv2.addEventListener("wheel", scrollFunction, false);
+logoGroupDiv3.addEventListener("wheel", scrollFunction, false);
+logoGroupDiv4.addEventListener("wheel", scrollFunction, false);
+
+//hover and click caret listener
+assets1.addEventListener("click", openFunction, false);
+assets2.addEventListener("click", openFunction, false);
+assets1.addEventListener("mouseover", caretColorOver, false);
+assets2.addEventListener("mouseover", caretColorOver, false);
+assets1.addEventListener("mouseout", caretColorOut, false);
+assets2.addEventListener("mouseout", caretColorOut, false);
+
+//show background listener
 background.addEventListener("mousedown", downBackground, false);
 background.addEventListener("mouseup", upBackground, false);
 backgroundNoBlur.addEventListener("mouseup", upBackground, false);
